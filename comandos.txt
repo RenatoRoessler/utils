@@ -7,3 +7,159 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/RenatoRoessler/utils.git
 git push -u origin main
+
+-----
+commandos cd 
+//criar pasta e entrar na pasta
+mkdir my-money-app & cd my-money-app
+
+-----
+comandos node
+// criando o arquivo package.json
+npm init -y
+
+//criando dependencias
+npm i --save express@4.14.0 mongoose@4.7.0 body-parser@1.15.2 lodash@4.17.4 mongoose-paginate@5.0.3 express-query-int@1.0.1 node-restful@0.2.5 pm2@2.1.5
+
+npm i --save-dev nodemon@1.11.0
+
+npm rum dev
+
+//inciar o banco
+mongod
+
+
+ npm init -y
+npm i --save-dev webpack@1.14.0 webpack-dev-server@1.16.2 -E
+npm i --save-dev babel-core@6.22.1 babel-loader@6.2.10 babel-plugin-react-html-attrs@2.0.0 babel-plugin-transform-object-rest-spread@6.22.0 babel-preset-es2015@6.22.0 babel-preset-react@6.22.0 -E
+npm i --save-dev extract-text-webpack-plugin@1.0.1 css-loader@0.26.1 style-loader@0.13.1 file-loader@0.9.0 -E
+npm i --save-dev admin-lte@2.3.6 font-awesome@4.7.0 ionicons@3.0.0 -E
+npm i --save-dev react@15.4.2 react-dom@15.4.2 react-router@3.0.2 redux@3.6.0 react-redux@4.4.6 redux-form@6.4.1 redux-multi@0.1.12 redux-promise@0.5.3 redux-thunk@2.1.0 react-redux-toastr@4.4.2 axios@0.15.3 lodash@4.17.4 -E
+
+
+
+
+
+--google cloud
+student-03-3cda879cef6e@qwiklabs.net
+gH4F73xzh62
+qwiklabs-gcp-03-8937633bde71
+
+
+https://console.cloud.google.com/getting-started?project=theta-bindery-309515
+
+https://cloud.google.com/docs/overview/cloud-platform-services#top_of_page
+
+
+gcloud auth list
+//A saída deve ser semelhante a esta, em que ACTIVE ACCOUNT está definida como sua identidade do Cloud IAM
+
+//Para criar um arquivo denominado test.txt, execute o seguinte comando touch:
+touch test.txt
+
+Execute o comando unix ls para listar os arquivos no diretório atual: ls
+
+Para editar um arquivo, digite nano seguido pelo nome do arquivo que você quer editar no Cloud Shell:
+nano test.txt
+
+Para salvar o arquivo com a nova mensagem, pressione CNTRL+X, Y e depois ENTER.
+Outro comando útil é o cat, que mostra o conteúdo de um arquivo.
+cat test.txt
+
+--É possível listar o ID de projeto com este comando:
+gcloud config list project
+
+--Agora que você aplicou o SSH, acesse root usando sudo.
+sudo su -
+
+--Como usuário root, atualize seu SO:
+apt-get update
+
+--Instale o NGINX:
+apt-get install nginx -y
+	
+--Verifique se o NGINX está em execução:
+ps auwx | grep nginx
+
+--No Cloud Shell, crie uma nova instância de máquina virtual na linha de comando usando gcloud:
+gcloud compute instances create gcelab2 --machine-type n1-standard-2 --zone us-central1-c
+
+Execute gcloud compute instances create --help para ver todos os padrões.
+
+Observação: se você sempre trabalhar na mesma região/zona e não quiser anexar a sinalização --zone todas as vezes, defina a região e as zonas padrão que o gcloud usará. Isso pode ser feito por meio destes comandos:--
+gcloud config set compute/zone ...
+gcloud config set compute/region ...
+
+--Para ver suas configurações de região e zona padrão, execute estes comandos:
+gcloud config get-value compute/zone
+gcloud config get-value compute/region
+--Se as respostas google-compute-default-region ou google-compute-default-zone não estão definidas, significa que nenhuma zona ou região padrão está definida.
+
+export PROJECT_ID=<your_project_ID>
+export ZONE=<your_zone>
+
+--Para isso, execute o comando abaixo substituindo ZONE pelo valor de zona do comando anterior:
+gcloud compute instances create gcelab2 --machine-type n1-standard-2 --zone $ZONE
+*gcloud compute permite gerenciar os recursos do Compute Engine de forma mais simples do que com a API do Compute Engine.
+*instances create cria uma nova instância.
+*gcelab2 é o nome da VM.
+*A sinalização --machine-type especifica o tipo de máquina n1-standard-2.
+*A sinalização --zone especifica o local de criação da VM.
+*Ao omitir --zone, a ferramenta gcloud pode inferir a zona desejada com base nas propriedades padrão. Se as outras configurações de instância necessárias, como machine type e image, não forem especificadas no comando create, elas serão definidas com os valores padrão.
+
+--Para abrir a ajuda do comando create, execute o comando abaixo:
+gcloud compute instances create --help
+
+--Veja a lista de configurações no seu ambiente:
+gcloud config list
+
+--Para ver todas as propriedades e suas configurações:
+gcloud config list --all
+
+--Liste os componentes:
+gcloud components list
+
+--Instale os componentes Beta:
+sudo apt-get install google-cloud-sdk
+
+--Ative o modo gcloud interactive:
+gcloud beta interactive
+
+--Para se conectar à VM com SSH, execute o comando abaixo:
+gcloud compute ssh gcelab2 --zone $ZONE
+
+--Mude o diretório de trabalho atual:
+cd $HOME
+
+--Abra o arquivo de configuração .bashrc com o editor de texto vi:
+vi ./.bashrc
+
+--Crie uma variável de ambiente para armazenar o ID do projeto substituindo <your_project_ID> pelo valor de nome do comando gcloud compute project-info describe que você executou antes:
+export PROJECT_ID=<your_project_ID>
+--Crie uma variável de ambiente para armazenar a zona substituindo <your_zone> pelo valor de zona do comando gcloud compute project-info describe que você executou antes:
+export ZONE=<your_zone>
+
+--Para verificar se as variáveis foram definidas corretamente, execute os comandos abaixo:
+echo $PROJECT_ID
+echo $ZONE
+
+--Para definir a zona do Compute padrão como us-central1-a, inicie uma nova sessão no Cloud Shell e execute o seguinte comando:
+gcloud config set compute/zone us-central1-a
+
+--Para criar um cluster, execute o comando abaixo, substituindo [CLUSTER-NAME] pelo nome que você escolher (por exemplo, my-cluster).
+gcloud container clusters create [CLUSTER-NAME]
+
+--Para autenticar o cluster, execute o comando abaixo, substituindo [CLUSTER-NAME] pelo nome do seu cluster:
+gcloud container clusters get-credentials [CLUSTER-NAME]
+
+--Para criar uma nova implantação hello-server da imagem do contêiner hello-app, execute este comando kubectl create:
+kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:1.0
+
+--Para criar um serviço do Kubernetes, um recurso que permite expor o aplicativo ao tráfego externo, execute o comando kubectl expose a seguir:
+kubectl expose deployment hello-server --type=LoadBalancer --port 8080
+
+--Para inspecionar o serviço hello-server, execute kubectl get:
+kubectl get service
+
+--Para excluir o cluster, execute este comando:
+gcloud container clusters delete [CLUSTER-NAME]
